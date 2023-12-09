@@ -1,4 +1,4 @@
-name: Pylint
+-name: Pylint
 
 on: [push]
 
@@ -8,19 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Checkout Code
-       uses: actions/checkout@v4.1.1
+    - name: Checkout Code
+      uses: actions/checkout@v4.1.1
 
-      -name: Setup Python
-       uses: actions/setup-python@v5.0.0
-       with:
-        python-version: 3.8
+    - name: Setup Python
+      uses: actions/setup-python@v5.0.0
+      with:         
+          python-version: 3.8
 
-      -name: Install Bandit
-       run: pip install bandit
+    - name: Install Bandit
+      run: pip install bandit
  
-      -name: Run Bandit
-       run: bandit -r .
+    - name: Run Bandit
+      run: bandit -r .
 
   
   build:
